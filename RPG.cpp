@@ -104,7 +104,7 @@ int round(const Player &pObject, const Enemy &eObject) {
 }
 
 int main() {
-    std::cout << "Welcome to RPG Game!" << '\n';
+    std::cout << "Welcome to thomedome's RPG Game!" << '\n';
     std::cout << "1) New Game" << '\n';
     std::cout << "2) Load a Save" << '\n';
 
@@ -126,11 +126,6 @@ int main() {
 
         // Get player name
         std::getline(std::cin, player.name);
-
-        if (player.name == "debug") { // debug
-            player.gold = 15000;
-
-        }
 
         std::cout << "Thank you for playing," << player.name << "!\n";
     } else { // Player loaded a save
@@ -295,8 +290,6 @@ int main() {
             }
 
             sleep(3);
-
-            // Choice of next game or shop or save + quit (make after)
 
         } else { // Any input that isn't 1 (1 is the player surviving)
             break;
