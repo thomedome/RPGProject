@@ -28,4 +28,4 @@ Any suggestions, create an issue, or email me (email below)
  - Balancing is sub-par... 
 
 ## If you want to contact me for any reason, email me!
-## thomedome@gmail.com
+thomedome@gmail.com
