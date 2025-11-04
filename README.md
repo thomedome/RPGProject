@@ -14,7 +14,9 @@ I started this project to learn more about C++ Game Development, and the general
 - C++17 or later
 - CMake (3.10+ recommended)
 
-g++ -std=c++17 RPG.cpp Player.cpp Enemy.cpp -o RPGProject
+g++ -std=c++17 RPG.cpp RPGHeaders/Player.cpp RPGHeaders/Enemy.cpp RPGHeaders/Shop.cpp -o RPGProject
+
+or just use the release... ;)
 
 ## FYI:
 This is not an official Riot-affiliated project, it is free for anyone to play / mess with, and all references to League of Legends IP belong to Riot Games.
