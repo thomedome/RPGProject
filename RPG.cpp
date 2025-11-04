@@ -10,13 +10,13 @@
 // -- After the player chooses, the enemy (AI) will do the same. Going to have to figure out some AI tho...
 // -- After this round, the player will get some rewards (gold, xp etc.) in which they can
 // -- increase their level and buy new items to get better stats.
-#include "common.h" // Common Libs - see common.h
-#include "Player.h"
-#include "Enemy.h"
-#include "Item.h"
-#include "Shop.h"
+#include "RPGHeaders/common.h"
+#include "RPGHeaders/Player.h"
+#include "RPGHeaders/Enemy.h"
+#include "RPGHeaders/Item.h"
+#include "RPGHeaders/Shop.h"
 
-using namespace std::this_thread;
+    using namespace std::this_thread;
 
 int round(const Player &pObject, const Enemy &eObject) {
     constexpr bool roundOngoing {true};

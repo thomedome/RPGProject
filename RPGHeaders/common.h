@@ -11,6 +11,6 @@
 #include <cmath>
 #include <random>
 #include <vector>
-#include "RPGHeaders/RPGUtilities.h"
+#include "RPGUtilities.h"
 
 #endif //RPGPROJECT_COMMON_H
