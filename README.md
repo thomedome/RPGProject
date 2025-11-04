@@ -14,7 +14,7 @@ I started this project to learn more about C++ Game Development, and the general
 - C++17 or later
 - CMake
 
-* in dir *
+in dir
 g++ -std=c++17 RPG.cpp Player.cpp Enemy.cpp -o RPGProject
 
 ## FYI:
