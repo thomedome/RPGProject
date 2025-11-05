@@ -223,3 +223,8 @@ bool Player::loadGame() {
 
     return true;
 }
+
+std::vector<std::string> getAvailableCasts() {
+
+    // return ;
+};

@@ -31,8 +31,8 @@ void Shop::openItem(const Item& selectedItem) const {
     std::cout << "Would you like to buy this item? Y/N" << '\n';
 }
 
-void Shop::decideToPurchase(char yesNo, const Player& player, const Item& selectedItem) const {
-    if (yesNo == 'Y' || yesNo == 'y') { // Attempt Purchase
+void Shop::decideToPurchase(const std::string yesNo, const Player& player, const Item& selectedItem) const {
+    if (yesNo == "Y" || yesNo == "y" || yesNo == "Yes" || yesNo == "yes") { // Attempt Purchase
         const bool succeededPurchase {player.attemptShopPurchase(selectedItem)}; // Get Result
         if (succeededPurchase) { // Yes
             std::cout << "Congrats! You purchased " << selectedItem.name << '.' << std::endl;
@@ -43,7 +43,7 @@ void Shop::decideToPurchase(char yesNo, const Player& player, const Item& select
         std::cout << "Sorry, you don't have enough gold to purchase this." << std::endl;
         return;
 
-    } if (yesNo == 'N' || yesNo == 'n') { // Go back to Items
+    } if (yesNo == "N" || yesNo == "n" || yesNo == "No" || yesNo == "no") { // Go back to Items
         return;
     }
 

@@ -14,7 +14,7 @@ public:
     void openShop(const Player& player) const;
     void listItems() const;
     void openItem(const Item& selectedItem) const;
-    void decideToPurchase(char yesNo, const Player& player, const Item& selectedItem) const;
+    void decideToPurchase(std::string yesNo, const Player& player, const Item& selectedItem) const;
 };
 
 

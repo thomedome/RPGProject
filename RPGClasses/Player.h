@@ -10,6 +10,8 @@
 #include <fstream>
 #include <string>
 
+#include "Spell.h"
+
 // test
 class Player {
 public:
@@ -26,6 +28,7 @@ public:
     mutable bool applyWounds {false};
     mutable std::vector<Item> playerInventory{};
     mutable std::vector<std::string> playerCasts{}; // These will last one round - clear this vector after every round.
+    mutable std::vector<Spell> playerAvailableSpells{}; // Available spells to the player
     mutable std::vector<std::string> flags{}; // Dodging flag
 
     void attack(const Enemy &eObject) const;
@@ -51,6 +54,9 @@ public:
     void saveGame() const;
 
     bool loadGame();
+
+    // Casting - WIP
+
 };
 
 #endif //RPGPROJECT_PLAYER_H

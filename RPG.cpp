@@ -10,13 +10,11 @@
 // -- After the player chooses, the enemy (AI) will do the same. Going to have to figure out some AI tho...
 // -- After this round, the player will get some rewards (gold, xp etc.) in which they can
 // -- increase their level and buy new items to get better stats.
-#include "RPGHeaders/common.h"
-#include "RPGHeaders/Player.h"
-#include "RPGHeaders/Enemy.h"
-#include "RPGHeaders/Item.h"
-#include "RPGHeaders/Shop.h"
-
-    using namespace std::this_thread;
+#include "RPGClasses/common.h"
+#include "RPGClasses/Player.h"
+#include "RPGClasses/Enemy.h"
+#include "RPGClasses/Item.h"
+#include "RPGClasses/Shop.h"
 
 int round(const Player &pObject, const Enemy &eObject) {
     constexpr bool roundOngoing {true};
@@ -301,5 +299,3 @@ int main() {
     std::cout << "Thank you for playing!";
     return 0;
 }
-
-// MAKE GRIEVOUS WORK

@@ -5,7 +5,9 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(RPGProject
         RPG.cpp
-        RPGHeaders/Player.cpp
-        RPGHeaders/Enemy.cpp
-        RPGHeaders/Shop.cpp
+        RPGClasses/Player.cpp
+        RPGClasses/Enemy.cpp
+        RPGClasses/Shop.cpp
+        RPGClasses/Spell.cpp
+        RPGClasses/Spell.h
 )
