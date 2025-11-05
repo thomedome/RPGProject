@@ -3,3 +3,7 @@
 //
 
 #include "Spell.h"
+
+void applySpellToCurrCast(const Spell &spellToApply, const Player &pObject) {
+    pObject.playerCasts.push_back(spellToApply);
+}

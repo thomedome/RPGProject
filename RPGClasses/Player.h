@@ -27,7 +27,7 @@ public:
     mutable int lifesteal = 0;
     mutable bool applyWounds {false};
     mutable std::vector<Item> playerInventory{};
-    mutable std::vector<std::string> playerCasts{}; // These will last one round - clear this vector after every round.
+    mutable std::vector<Spell> playerCasts{}; // These will last one round - clear this vector after every round.
     mutable std::vector<Spell> playerAvailableSpells{}; // Available spells to the player
     mutable std::vector<std::string> flags{}; // Dodging flag
 
