@@ -167,6 +167,10 @@ void Player::saveGame() const {
 
 bool Player::loadGame() {
 
+    if (!std::filesystem::exists("gameSaves")) {
+        std::filesystem::create_directory("gameSaves");
+    }
+
     int pChoice {};
 
     std::cout << "Enter the number that your save file corresponds to:" << std::endl;
@@ -186,8 +190,6 @@ bool Player::loadGame() {
 
     std::string fName {savesTranslatorDB.find(pChoice)->second}; // pull the name from the map
     std::ifstream file;
-
-    std::cout << fName << '\n';
 
     file.open("gameSaves/" + fName);
 
