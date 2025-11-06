@@ -10,6 +10,7 @@
 
 #include "Item.h"
 #include "Enemy.h"
+#include "Spell.h"
 
 void Player::dealDamage(const Enemy& eObject) const {
     int damageIncArmor = calculateDamageIncArmor(abilityPower, eObject.defense); // Calculate Attack + Armor
@@ -97,8 +98,19 @@ int Player::getXPCap(const int xpReq) {
     return xpReq + 100;
 }
 
-void Player::cast() const {
-    // Work on this after I've finished everything else - probably going to be complicated
+void Player::cast(const Player& pObject, const Enemy* eObject) const {
+    // List Spells
+    std::cout << "Which spell would you like to cast?" << '\n';
+    for (int i {0}; i < allSpells.size(); i++) {
+        std::cout << "- " << allSpells[i].name << '\n';
+    }
+
+    std::string spellChoice {};
+    std::getline(std::cin, spellChoice);
+
+    if (Spell* spell = getSpellByName(spellChoice, allSpells)) {
+        spell->apply(pObject, eObject);
+    };
 }
 
 void Player::addDodgeFlag() const {

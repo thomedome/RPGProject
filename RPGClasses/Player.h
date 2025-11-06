@@ -27,9 +27,9 @@ public:
     mutable int lifesteal = 0;
     mutable bool applyWounds {false};
     mutable std::vector<Item> playerInventory{};
-    mutable std::vector<Spell> playerCasts{}; // These will last one round - clear this vector after every round.
-    mutable std::vector<Spell> playerAvailableSpells{}; // Available spells to the player
+    mutable std::vector< Spell> activeEffects; // player spells
     mutable std::vector<std::string> flags{}; // Dodging flag
+    mutable std::vector<std::string> dynamicVariables{};
 
     void attack(const Enemy &eObject) const;
 
@@ -39,7 +39,7 @@ public:
 
     void heal() const;
 
-    void cast() const;
+    void cast(const Player &pObject, const Enemy *eObject) const;
 
     void levelUp() const;
 

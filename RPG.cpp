@@ -49,7 +49,7 @@ int round(const Player &pObject, const Enemy &eObject) {
 
             case 4: {
                 // Cast
-                pObject.cast();
+                pObject.cast(pObject, &eObject);
                 break;
             }
 
@@ -98,6 +98,8 @@ int round(const Player &pObject, const Enemy &eObject) {
         if (pObject.currentHP <= 0) {
             return 0;
         }
+        // Clear casts
+        spellChecks(pObject, eObject);
     }
 }
 
