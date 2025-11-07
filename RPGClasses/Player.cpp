@@ -98,7 +98,7 @@ int Player::getXPCap(const int xpReq) {
     return xpReq + 100;
 }
 
-void Player::cast(const Player& pObject, const Enemy* eObject) const {
+void Player::cast(Player &pObject, Enemy *eObject) {
     // List Spells
     std::cout << "Which spell would you like to cast?" << '\n';
     for (int i {0}; i < allSpells.size(); i++) {
@@ -235,8 +235,3 @@ bool Player::loadGame() {
 
     return true;
 }
-
-std::vector<std::string> getAvailableCasts() {
-
-    // return ;
-};

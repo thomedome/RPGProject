@@ -27,7 +27,7 @@ public:
     mutable int lifesteal = 0;
     mutable bool applyWounds {false};
     mutable std::vector<Item> playerInventory{};
-    mutable std::vector< Spell> activeEffects; // player spells
+    mutable std::vector<Spell> activeEffects; // player spells
     mutable std::vector<std::string> flags{}; // Dodging flag
     mutable std::vector<std::string> dynamicVariables{};
 
@@ -39,9 +39,11 @@ public:
 
     void heal() const;
 
-    void cast(const Player &pObject, const Enemy *eObject) const;
+    static void cast(Player &pObject, Enemy *eObject);
 
     void levelUp() const;
+
+    void cast(const Player & player, const Enemy *enemy);
 
     static int getXPCap(int xpReq);
 

@@ -16,7 +16,7 @@
 #include "RPGClasses/Item.h"
 #include "RPGClasses/Shop.h"
 
-int round(const Player &pObject, const Enemy &eObject) {
+int round(Player &pObject, const Enemy &eObject) {
     constexpr bool roundOngoing {true};
 
     while (roundOngoing) {
@@ -166,7 +166,7 @@ int main() {
                                     char yesNo {};
                                     std::cin >> yesNo;
 
-                                    newShop.decideToPurchase(yesNo, player, selectedItem); // Attempt to get purchase + logic
+                                    newShop.decideToPurchase(&yesNo, player, selectedItem); // Attempt to get purchase + logic
                                     continue;
 
                                 } if (itemChoice == 1) { // Exit Menu
