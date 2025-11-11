@@ -25,7 +25,7 @@ void Spell::spellChecks(Player &pObject, Enemy &eObject) {
     }
 }
 
-Spell* Spell::getSpellByName(const std::string& iname, std::vector<Spell>& spellList) {
+Spell* Spell::getSpellByName(const std::string &iname, std::vector<Spell> &spellList) {
     auto it = std::find_if(spellList.begin(), spellList.end(),
         [&](const Spell& s) { return s.name == iname; });
 

@@ -98,7 +98,7 @@ int Player::getXPCap(const int xpReq) {
     return xpReq + 100;
 }
 
-void Player::cast(Player &pObject, Enemy *eObject) {
+void Player::cast() {
     // List Spells
     std::cout << "Which spell would you like to cast?" << '\n';
     for (int i {0}; i < allSpells.size(); i++) {
@@ -107,10 +107,6 @@ void Player::cast(Player &pObject, Enemy *eObject) {
 
     std::string spellChoice {};
     std::getline(std::cin, spellChoice);
-
-    if (Spell* spell = getSpellByName(spellChoice, allSpells)) {
-        spell->apply(pObject, eObject);
-    };
 }
 
 void Player::addDodgeFlag() const {
@@ -234,4 +230,20 @@ bool Player::loadGame() {
     std::cout << "Save loaded!" << std::endl;
 
     return true;
+}
+
+void Player::modifyStat(const std::string& stat, const int amount, const) {
+
+}
+
+void Player::applySpell(const Spell &spell) {
+    activeEffects.push_back(spell);
+    switch (spell.target) {
+        case TargetType::Self:
+            for (const auto& [stat, amount] : spell.spellModifiers) {
+
+            }
+    }
+
+
 }

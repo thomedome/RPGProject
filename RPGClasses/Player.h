@@ -39,11 +39,9 @@ public:
 
     void heal() const;
 
-    static void cast(Player &pObject, Enemy *eObject);
-
     void levelUp() const;
 
-    void cast(const Player & player, const Enemy *enemy);
+    void cast();
 
     static int getXPCap(int xpReq);
 
@@ -57,6 +55,11 @@ public:
 
     bool loadGame();
 
+    void modifyStat(const std::string &stat, int amount);
+
+    void applySpell(const Spell& spell);
+
+    void updateSpells();
     // Casting - WIP
 
 };

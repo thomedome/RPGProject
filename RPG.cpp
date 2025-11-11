@@ -15,6 +15,7 @@
 #include "RPGClasses/Enemy.h"
 #include "RPGClasses/Item.h"
 #include "RPGClasses/Shop.h"
+#include "RPGClasses/Spell.h"
 
 int round(Player &pObject, const Enemy &eObject) {
     constexpr bool roundOngoing {true};
@@ -49,7 +50,7 @@ int round(Player &pObject, const Enemy &eObject) {
 
             case 4: {
                 // Cast
-                pObject.cast(pObject, &eObject);
+                pObject.cast(pObject, eObject);
                 break;
             }
 

@@ -21,28 +21,31 @@ enum SpellType { // Spell types
     Support
 };
 
+enum class TargetType {
+    Self,
+    Enemy,
+    Both
+};
+
+enum class ModifyType {
+    Heal,
+    Damage
+};
+
 struct Spell {
     std::string name;
     std::string description;
     SpellType type;
-    // Spell Effect Controls
+    TargetType target;
+    ModifyType modType; // Heal or Damage
     int remainingRounds;
-    std::function<void(Player&, Enemy*)> apply;
-    std::function<void(Player&, Enemy*)> remove;
-
-    void applySpellToCurrCast(const Spell &spellToApply, const Player &pObject);
-
-    void spellChecks(Player &pObject, Enemy &eObject);
-
-    Spell *getSpellByName(const std::string &name, std::vector<Spell> &spellList);
+    std::unordered_map<std::string, int> spellModifiers; // Iterate and affect
 };
 
 extern std::vector<Spell> allSpells;
 
-// [](const Player& pObject){};
-
 void applySpellToCurrCast(const Spell& spellToApply, const Player& pObject); // Add spells to pObject.currCasts vector.
 void spellChecks(const Player& pObject, const Enemy& eObject); // Do all spell checks in this function - use spell lambdas, and iterate through after each round.
-Spell* getSpellByName(const std::string& name, std::vector<Spell>& spellList);
+Spell getSpellByName(const std::string& name, std::vector<Spell>& spellList);
 
 #endif //RPGPROJECT_SPELL_H
