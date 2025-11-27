@@ -21,6 +21,11 @@ int round(Player &pObject, const Enemy &eObject) {
     constexpr bool roundOngoing {true};
 
     while (roundOngoing) {
+        // Cleanse Spells at start of round.
+        if (!pObject.flags.empty()) {
+
+        }
+
         // Give player choice
         std::cout << "What would you like to do, " << pObject.name << "? \n";
         sleep(2);

@@ -27,6 +27,6 @@ struct Spell {
 };
 
 extern std::unordered_map<int, Spell> allSpells;
-
+bool cleanseSpells(Player& pObject);
 
 #endif //RPGPROJECT_SPELL_H

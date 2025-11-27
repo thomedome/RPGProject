@@ -103,8 +103,8 @@ void Player::cast(Player& pObject) {
 
     while (true) {
         std::cout << "Which spell would you like to cast?" << '\n';
-        for (int i {0}; i < allSpells.size(); i++) {
-            std::cout << i << ") " << allSpells[i].name << '\n';
+        for (int i {1}; i < allSpells.size() + 1; i++) {
+            std::cout << i << ") " << allSpells.at(i).name << '\n';
         }
         int spellChoice {};
         std::cin >> spellChoice;
