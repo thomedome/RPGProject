@@ -27,9 +27,10 @@ public:
     mutable int lifesteal = 0;
     mutable bool applyWounds {false};
     mutable std::vector<Item> playerInventory{};
-    mutable std::vector<Spell> activeEffects; // player spells
+    mutable std::vector<std::string> activeEffects; // player spells
     mutable std::vector<std::string> flags{}; // Dodging flag
     mutable std::vector<std::string> dynamicVariables{};
+    mutable Enemy currOpponent;
 
     void attack(const Enemy &eObject) const;
 
@@ -41,7 +42,7 @@ public:
 
     void levelUp() const;
 
-    void cast();
+    void cast(Player& pObject);
 
     static int getXPCap(int xpReq);
 
@@ -58,10 +59,6 @@ public:
     void modifyStat(const std::string &stat, int amount);
 
     void applySpell(const Spell& spell);
-
-    void updateSpells();
-    // Casting - WIP
-
 };
 
 #endif //RPGPROJECT_PLAYER_H

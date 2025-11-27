@@ -39,6 +39,13 @@ void Enemy::addDodgeFlag() const {
 }
 
 void Enemy::takeTurn(const Player &pObject) const {
+
+    if (searchVector(flags, "Silenced")) {
+        std::cout << name << " is Silenced. Skipping turn!" << std::endl;
+        flags.erase(std::ranges::find(flags, "Silenced"));
+        return;
+    }
+
     // Decision-Making
     int randomNum{Random::Int(1, 100)};
     if (randomNum <= 33) {

@@ -33,11 +33,11 @@ public:
     mutable int defense{};
     mutable int abilityPower{};
     mutable int level{};
-    mutable enemyDifficulty difficulty{};
-    mutable enemyBehaviourState state{Random};
-    mutable std::vector<std::string> flags{}; // Dodging flags
+    mutable enemyDifficulty difficulty {};
+    mutable enemyBehaviourState state {Random};
+    mutable std::vector<std::string> flags{}; // Dodging + Spell flags
 
-    void attack(const Player &pObject) const; // Declare now - change later so I can reference the player object
+    void attack(const Player &pObject) const;
 
     void defensiveTurn() const;
 
@@ -54,6 +54,6 @@ public:
 };
 
 // Vector for random enemy names
-inline std::vector<std::string> enemyNames{"Goblin", "Golem", "Vex", "Pillager", "Ruination Wraith", "Yordle", "Fiend"};
+inline std::vector<std::string> enemyNames{"Goblin", "Golem", "Vex", "Pillager", "Ruination Wraith", "Yordle", "Fiend", "Skeleton"};
 
 #endif //RPGPROJECT_ENEMY_H

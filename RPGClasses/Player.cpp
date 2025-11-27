@@ -98,15 +98,37 @@ int Player::getXPCap(const int xpReq) {
     return xpReq + 100;
 }
 
-void Player::cast() {
+void Player::cast(Player& pObject) {
     // List Spells
-    std::cout << "Which spell would you like to cast?" << '\n';
-    for (int i {0}; i < allSpells.size(); i++) {
-        std::cout << "- " << allSpells[i].name << '\n';
-    }
 
-    std::string spellChoice {};
-    std::getline(std::cin, spellChoice);
+    while (true) {
+        std::cout << "Which spell would you like to cast?" << '\n';
+        for (int i {0}; i < allSpells.size(); i++) {
+            std::cout << i << ") " << allSpells[i].name << '\n';
+        }
+        int spellChoice {};
+        std::cin >> spellChoice;
+
+        if (spellChoice >= allSpells.size()) {
+            std::cout << "This isn't a spell." << std::endl;
+            continue;
+        }
+
+        std::cout << allSpells.at(spellChoice - 1).name << '\n';
+        std::cout << allSpells.at(spellChoice - 1).description << '\n';
+        std::cout << "Would you like to cast " << allSpells.at(spellChoice - 1).name << "? Y/N \n";
+
+        std::string spellAccept {};
+        std::cin >> spellAccept;
+
+        if (spellAccept == "Y" || spellAccept == "y" || spellAccept == "Yes" || spellAccept == "YES" || spellAccept == "yes") {
+            Spell spell = allSpells.at(spellChoice - 1);
+            spell.CastSpell(pObject, spell);
+            break;
+        }
+
+        break;
+    }
 }
 
 void Player::addDodgeFlag() const {
@@ -230,20 +252,4 @@ bool Player::loadGame() {
     std::cout << "Save loaded!" << std::endl;
 
     return true;
-}
-
-void Player::modifyStat(const std::string& stat, const int amount, const) {
-
-}
-
-void Player::applySpell(const Spell &spell) {
-    activeEffects.push_back(spell);
-    switch (spell.target) {
-        case TargetType::Self:
-            for (const auto& [stat, amount] : spell.spellModifiers) {
-
-            }
-    }
-
-
 }

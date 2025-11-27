@@ -6,8 +6,8 @@
 // -- -- Attack: Self Explanatory
 // -- -- Heal: Also Self Explanatory - works off of random max hp%
 // -- -- Dodge: You get the gist... X% chance depending on level
-// -- -- Cast: Use a spell. Player starts with one, and as you level up, you get more and more. Only one per battle though.
-// -- After the player chooses, the enemy (AI) will do the same. Going to have to figure out some AI tho...
+// -- -- Cast: Use a spell. Only one per battle though.
+// -- After the player chooses, the enemy (AI) will do the same.
 // -- After this round, the player will get some rewards (gold, xp etc.) in which they can
 // -- increase their level and buy new items to get better stats.
 #include "RPGClasses/common.h"
@@ -50,7 +50,7 @@ int round(Player &pObject, const Enemy &eObject) {
 
             case 4: {
                 // Cast
-                pObject.cast(pObject, eObject);
+                pObject.cast(pObject);
                 break;
             }
 
@@ -99,8 +99,6 @@ int round(Player &pObject, const Enemy &eObject) {
         if (pObject.currentHP <= 0) {
             return 0;
         }
-        // Clear casts
-        spellChecks(pObject, eObject);
     }
 }
 
@@ -191,6 +189,8 @@ int main() {
         // Create enemy object + give random stats
         Enemy enemy;
         enemy.name = enemyNames[Random::Int(0, enemyNames.size())];
+
+        player.currOpponent = enemy;
 
         // Difficulty shall be random: Easy - 50%, Medium - 25%, Hard - 15%, Extreme - 10%
         const int random = Random::Int(1, 100);

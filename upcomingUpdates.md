@@ -16,3 +16,5 @@ Any ideas / issues, ***CONTACT ME!!*** <br>
 I don't bite ;) <br>
 **thomedome@gmail.com**
 <br> <br> Thank you for following this project!
+
+*p.s currently drowning in coursework, updates will probably be few and far inbetween. thank you for understanding!*
